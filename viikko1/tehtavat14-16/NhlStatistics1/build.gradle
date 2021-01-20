@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+    id 'jacoco'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+
+application {
+    mainClass = 'ohtuesimerkki.Main'
+}
+
+run{
+    standardInput = System.in
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
